@@ -1,21 +1,19 @@
 {
-  "name": "example-with-tailwindcss",
+  "name": "solid-pwa",
+  "version": "0.0.0",
+  "description": "",
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
-    "build": "vinxi build",
-    "start": "vinxi start",
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "generate-pwa-assets": "pwa-asset-generator public/icon.png public/pwa --background '#1b1b1b'"
+    "generate-pwa-assets": "pwa-asset-generator public/icon.png public/pwa --background '#fff'"
   },
-  "dependencies": {
-    "@solidjs/router": "^0.15.0",
-    "@solidjs/start": "^1.1.0",
-    "solid-js": "^1.9.5",
-    "vinxi": "^0.5.3"
-  },
+  "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.25.1",
     "@tailwindcss/vite": "^4.0.7",
@@ -24,25 +22,18 @@
     "eslint-plugin-solid": "^0.14.5",
     "prettier": "^3.5.3",
     "pwa-asset-generator": "^8.0.4",
-    "sharp": "^0.34.1",
     "tailwindcss": "^4.0.7",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-safe-area": "^0.6.0",
-    "typescript": "^5.8.3",
+    "typescript": "^5.7.2",
     "typescript-eslint": "^8.31.0",
-    "vite-plugin-pwa": "^1.0.0"
+    "vite": "^6.0.0",
+    "vite-plugin-pages": "^0.33.0",
+    "vite-plugin-pwa": "^1.0.0",
+    "vite-plugin-solid": "^2.11.6"
   },
-  "prettier": {
-    "singleQuote": false,
-    "printWidth": 100,
-    "tabWidth": 2,
-    "useTabs": false,
-    "semi": true,
-    "bracketSpacing": true,
-    "arrowParens": "always",
-    "endOfLine": "auto"
-  },
-  "engines": {
-    "node": ">=22"
+  "dependencies": {
+    "@solidjs/router": "^0.15.3",
+    "solid-js": "^1.9.5"
   }
 }
