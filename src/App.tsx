@@ -1,9 +1,7 @@
-import { A, useLocation } from "@solidjs/router";
+import { A } from "@solidjs/router";
 import { Suspense, type ParentComponent } from "solid-js";
 
 const App: ParentComponent = (props) => {
-  const location = useLocation();
-
   return (
     <>
       <nav class="bg-gray-200 text-gray-900 px-4">
@@ -22,16 +20,6 @@ const App: ParentComponent = (props) => {
             <A href="/error" class="no-underline hover:underline">
               Error
             </A>
-          </li>
-
-          <li class="text-sm flex items-center space-x-1 ml-auto">
-            <span>URL:</span>
-            <input
-              class="w-75px p-1 bg-white text-sm rounded-lg"
-              type="text"
-              readOnly
-              value={location.pathname}
-            />
           </li>
         </ul>
       </nav>
