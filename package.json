@@ -4,7 +4,11 @@
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "generate-pwa-assets": "pwa-asset-generator public/icon.png public/pwa --background '#1b1b1b'"
   },
   "dependencies": {
     "@solidjs/router": "^0.15.0",
@@ -13,8 +17,30 @@
     "vinxi": "^0.5.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.25.1",
     "@tailwindcss/vite": "^4.0.7",
-    "tailwindcss": "^4.0.7"
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-solid": "^0.14.5",
+    "prettier": "^3.5.3",
+    "pwa-asset-generator": "^8.0.4",
+    "sharp": "^0.34.1",
+    "tailwindcss": "^4.0.7",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-safe-area": "^0.6.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.0",
+    "vite-plugin-pwa": "^1.0.0"
+  },
+  "prettier": {
+    "singleQuote": false,
+    "printWidth": 100,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "auto"
   },
   "engines": {
     "node": ">=22"
