@@ -3,6 +3,6 @@
 @plugin 'tailwindcss-animate';
 @plugin 'tailwindcss-safe-area';
 
-body {
+html {
   overscroll-behavior: none;
 }
