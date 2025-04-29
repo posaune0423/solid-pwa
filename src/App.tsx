@@ -1,6 +1,7 @@
-import { useBeforeLeave } from "@solidjs/router";
+import { useBeforeLeave, useLocation } from "@solidjs/router";
 import type { ParentComponent } from "solid-js";
 import GlobalFooter from "./components/GlobalFooter";
+import ScreenHeader from "./components/ScreenHeader";
 
 const App: ParentComponent = (props) => {
   useBeforeLeave((e) => {
@@ -29,19 +30,25 @@ const App: ParentComponent = (props) => {
     );
   });
 
+  const location = useLocation();
+  const getTitle = () => {
+    const path = location.pathname;
+    if (path === '/') return 'Home';
+    if (path === '/about') return 'About';
+    if (path === '/profile') return 'Profile';
+    return 'Solid PWA';
+  };
+
   return (
-    <div class="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Main content area */}
-      <main class="flex-grow overflow-y-auto overscroll-contain pt-safe-top pb-20">
-        {/* Removed extra padding from main, apply padding within pages or this container */}
+    <div class="flex flex-col h-screen bg-gray-50 dark:bg-gray-900 overscroll-y-none">
+      <ScreenHeader title={getTitle()} />
+
+      <main class="flex-grow overflow-y-auto overscroll-contain pb-20">
         <div class="p-4 text-gray-900 dark:text-gray-100">
-          {/* Suspense is removed as vite-plugin-pages handles it often */}
-          {/* If you need Suspense for specific resources, add it within the page components */}
           {props.children}
         </div>
       </main>
 
-      {/* Global Footer */}
       <GlobalFooter />
     </div>
   );

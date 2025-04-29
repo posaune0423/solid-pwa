@@ -3,9 +3,15 @@
 @plugin 'tailwindcss-animate';
 @plugin 'tailwindcss-safe-area';
 
-html {
-  overscroll-behavior: none; /* Prevent pull-to-refresh on the whole page */
-  color-scheme: dark; /* Inform the browser about the dark theme */
+@layer base {
+  * {
+    overscroll-behavior: none;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 11 */
+  }
+  *::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, newer versions of Opera */
+  }
 }
 
 body {

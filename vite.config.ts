@@ -54,6 +54,47 @@ export default defineConfig({
           },
         ],
       },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        runtimeCaching: [
+          {
+            urlPattern: /^\/pwa\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'pwa-assets-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/images\.pokemontcg\.io\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'pokemon-image-cache',
+              expiration: {
+                maxEntries: 200,
+                maxAgeSeconds: 60 * 60 * 24 * 30,
+              },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/api\.pokemontcg\.io\/v2\/cards/i,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'pokemon-api-cache',
+              expiration: {
+                maxEntries: 5,
+                maxAgeSeconds: 60 * 60 * 24 * 1,
+              },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+        ],
+      },
     }),
   ],
   server: {
