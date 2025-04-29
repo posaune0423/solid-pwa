@@ -35,6 +35,9 @@ importers:
       pwa-asset-generator:
         specifier: ^8.0.4
         version: 8.0.4
+      solid-icons:
+        specifier: ^1.1.0
+        version: 1.1.0(solid-js@1.9.5)
       tailwindcss:
         specifier: ^4.0.7
         version: 4.0.7
@@ -4709,6 +4712,14 @@ packages:
       }
     engines: { node: ">= 10.0.0", npm: ">= 3.0.0" }
 
+  solid-icons@1.1.0:
+    resolution:
+      {
+        integrity: sha512-IesTfr/F1ElVwH2E1110s2RPXH4pujKfSs+koT8rwuTAdleO5s26lNSpqJV7D1+QHooJj18mcOiz2PIKs0ic+A==,
+      }
+    peerDependencies:
+      solid-js: "*"
+
   solid-js@1.9.5:
     resolution:
       {
@@ -8513,6 +8524,10 @@ snapshots:
     dependencies:
       ip-address: 9.0.5
       smart-buffer: 4.2.0
+
+  solid-icons@1.1.0(solid-js@1.9.5):
+    dependencies:
+      solid-js: 1.9.5
 
   solid-js@1.9.5:
     dependencies:

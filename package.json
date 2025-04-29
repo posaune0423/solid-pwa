@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "generate-pwa-assets": "pwa-asset-generator public/icon.png public/pwa --background '#fff'"
+    "generate-pwa-assets": "pwa-asset-generator public/icon.png public/pwa --background '#101828'"
   },
   "license": "MIT",
   "devDependencies": {
@@ -30,7 +30,8 @@
     "vite": "^6.0.0",
     "vite-plugin-pages": "^0.33.0",
     "vite-plugin-pwa": "^1.0.0",
-    "vite-plugin-solid": "^2.11.6"
+    "vite-plugin-solid": "^2.11.6",
+    "solid-icons": "^1.1.0"
   },
   "dependencies": {
     "@solidjs/router": "^0.15.3",

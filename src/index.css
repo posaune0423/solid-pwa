@@ -4,5 +4,34 @@
 @plugin 'tailwindcss-safe-area';
 
 html {
-  overscroll-behavior: none;
+  overscroll-behavior: none; /* Prevent pull-to-refresh on the whole page */
+  color-scheme: dark; /* Inform the browser about the dark theme */
+}
+
+body {
+  @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  min-height: 100vh; /* Ensure body takes full height */
+  min-height: 100dvh; /* Dynamic viewport height */
+}
+
+/* Glassmorphism for footer */
+.glassmorphism-footer {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glassmorphism-footer {
+  background: rgba(31, 41, 55, 0.6); /* gray-800 with opacity */
+  border-top: 1px solid rgba(75, 85, 99, 0.3); /* gray-600 with opacity */
+}
+
+/* Apply safe area padding to the bottom of the main content or footer as needed */
+/* Example: Apply to the footer directly in its component */
+
+/* Ensure scrollable areas within pages can scroll */
+.scrollable-content {
+  overflow-y: auto;
+  overscroll-behavior: contain; /* Prevent scroll chaining out of this element */
 }
